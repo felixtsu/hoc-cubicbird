@@ -8,11 +8,11 @@ namespace hocCubicbird {
     }
 
     export enum GameSpeed {
-        // %block="正常速度"
+        //%block="正常速度"
         NORMAL = 1,
-        // %block="四倍速度"
+        //%block="四倍速度"
         FAST = 4,
-        // %block="十六倍速度"
+        //%block="十六倍速度"
         FASTER = 16,
     }
 
@@ -58,7 +58,7 @@ namespace hocCubicbird {
     const RESULT_SIZE = 50
     let _level = Level.第一关
     let _currentAnswer = NaN;
-    let _currentSpeed = GameSpeed.FASTER;
+    let _currentSpeed = GameSpeed.NORMAL;
 
     let challengerName :string = "方块鸟"
 
@@ -70,7 +70,7 @@ namespace hocCubicbird {
 
     interface Result {
 
-        problemLines:ProblemResult[]
+        problemLines:summary.ProblemResult[]
 
         level1Correct:number
         level2avgCorrect:boolean
@@ -410,13 +410,13 @@ namespace hocCubicbird {
         pauseImpl(1000)
 
 
-        const hsCountResultLine = "hsCount = " + _submitHighestScoreCount    
+        const hsCountResultLine = "HighScoreCount = " + _submitHighestScoreCount    
         if (cnt == _submitHighestScoreCount) {
             _result.level2hsCountCorrect = true
             judgeSprite.say("嗯，正确!")
             _result.problemLines.push({
                 line: hsCountResultLine,
-                isCorrect:false,
+                isCorrect:true,
                 oneline:true
             })
         } else {
@@ -637,14 +637,26 @@ namespace hocCubicbird {
         pauseImpl(3000)
     }
 
-    function summary() {
-
-        tiles.placeOnTile(judgeSprite, tiles.getTileLocation(0,0))
-        judgeSprite.say(challengerName)
-
-        tiles.setTilemap(tilemap`level_1`)
-        scroll.textUp(_result.problemLines)
-
+    function summaryScene() {
+        summary.setUpSummaryScene(challengerName, img`
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . 1 1 1 1 1 1 1 1 1 1 . . .
+            . . 1 4 4 4 4 4 4 4 4 4 1 . . .
+            . 1 5 4 4 4 4 4 4 4 4 4 1 . . .
+            1 5 5 4 4 f f 4 4 1 1 1 1 1 1 1
+            5 5 5 4 4 f f 4 4 5 5 5 5 5 5 .
+            . . . 4 4 4 4 4 4 5 5 5 5 5 . .
+            . . . 4 4 4 4 4 4 5 5 5 5 . . .
+            . . . 4 4 4 4 4 4 5 5 5 1 . . .
+            . . . 4 4 4 4 4 4 5 5 4 1 . . .
+            . . . 4 4 4 4 4 4 5 4 4 1 . . .
+            . . . 9 9 9 7 7 7 7 7 7 1 . . .
+            . . . . 9 9 7 7 7 7 7 7 1 . . .
+            . . . . . 9 7 7 7 7 7 7 1 . . .
+            . . . . . . . . . . . . . . . .
+        `)
+        summary.textUp(_result.problemLines)
     }
 
     control.runInParallel(function() {
@@ -657,7 +669,7 @@ namespace hocCubicbird {
 
         clearScoreStatScene()
 
-        summary()
+        summaryScene()
 
         
     })
