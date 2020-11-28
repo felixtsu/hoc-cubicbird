@@ -218,12 +218,15 @@ namespace hocCubicbird {
         scene.cameraFollowSprite(challengerSprite)
         pauseImpl(500)
 
-        // TODO 此处有bug，下面两句较长的话都没有输出；
         judgeSprite.say("老师")
         pauseImpl(1000)
-        judgeSprite.say("刚刚的数据考试的卷子都改好了")
+        judgeSprite.say("挑战者们")
         pauseImpl(2000)
-        judgeSprite.say("快点统计这次的成绩吧")
+        judgeSprite.say("都完成挑战了")
+        pauseImpl(2000)
+        judgeSprite.say("统计一下")
+        pauseImpl(2000)
+        judgeSprite.say("这次的成绩吧")
         pauseImpl(2000)
         //过场动画 -end--
     }
@@ -231,29 +234,29 @@ namespace hocCubicbird {
 
     function scoreStat() {
 
-        //tiles.setTilemap(tilemap`level`)
-
-        // judgeSprite = sprites.create(img`
-        //     . . . f f f f f . . . .
-        //     . . f e e e e e f f . .
-        //     . f e e e e e e e f f .
-        //     f e e e e e e e f f f f
-        //     f e e 4 e e e f f f f f
-        //     f e e 4 4 e e e f f f f
-        //     f f e 4 4 4 4 4 f f f f
-        //     f f e 4 4 f f 4 e 4 f f
-        //     . f f d d d d 4 d 4 f .
-        //     . . f b b d d 4 f f f .
-        //     . . f e 4 4 4 e e f . .
-        //     . . f 1 1 1 e d d 4 . .
-        //     . . f 1 1 1 e d d e . .
-        //     . . f 6 6 6 f e e f . .
-        //     . . . f f f f f f . . .
-        //     . . . . . f f f . . . .
-        // `)
-
-        //judgeSprite.x += 48
-        //judgeSprite.y += 32
+        if (judgeSprite == null) {
+            // 直接跳到第二关的话，judge就没有生成
+            judgeSprite = sprites.create(img`
+                . . . f f f f f . . . .
+                . . f e e e e e f f . .
+                . f e e e e e e e f f .
+                f e e e e e e e f f f f
+                f e e 4 e e e f f f f f
+                f e e 4 4 e e e f f f f
+                f f e 4 4 4 4 4 f f f f
+                f f e 4 4 f f 4 e 4 f f
+                . f f d d d d 4 d 4 f .
+                . . f b b d d 4 f f f .
+                . . f e 4 4 4 e e f . .
+                . . f 1 1 1 e d d 4 . .
+                . . f 1 1 1 e d d e . .
+                . . f 6 6 6 f e e f . .
+                . . . f f f f f f . . .
+                . . . . . f f f . . . .
+            `, JUDGE_SPRITE_KIND)
+            judgeSprite.x += 64
+            judgeSprite.y += 20
+        }
         
         challengerSprite = sprites.create(img`
             . . . . . f f 4 4 f f . . . . .
@@ -276,16 +279,12 @@ namespace hocCubicbird {
         challengerSprite.y -= 20
         challengerSprite.x += 288//更改：位置需要右编移动十八格
 
-
         intermission()
-        
                 
         let sum = 0
         let hs = 0
         let cnt = 0
 
-        judgeSprite.say("开始统计吧")
-        pauseImpl(500)
         challengerSprite.say("好")
 
         for (let i = 0; i < RESULT_SIZE; i++) {
@@ -352,8 +351,6 @@ namespace hocCubicbird {
         challengerSprite.say(_submitAvg.toString())
         pauseImpl(1000)
 
-
-
         const avgResultLine = "AvgScore = " + _submitAvg
         if (avg == _submitAvg) {
             _result.level2avgCorrect = true
@@ -373,7 +370,6 @@ namespace hocCubicbird {
             })
         }
         pauseImpl(1000)
-
 
         judgeSprite.say("最高分是？")
         
@@ -402,7 +398,7 @@ namespace hocCubicbird {
         }
         pauseImpl(1000)
 
-        judgeSprite.say("最高分有几个人？")
+        judgeSprite.say("有几个人？")
         
         challengeThinks(5, 50)
 
@@ -441,7 +437,6 @@ namespace hocCubicbird {
     }
 
     function mathQuiz() {
-        tiles.setTilemap(tilemap`level`)//设置场景
 
         leftOpSprite = sprites.create(img`
             . . . . f f f f . . . . .
@@ -506,22 +501,22 @@ namespace hocCubicbird {
         rightOpSprite.y -= 20
 
         challengerSprite = sprites.create(img`
-            . . . . . . f f f f . . . . . .
-            . . . . f f e e e e f f . . . .
-            . . . f e e e f f e e e f . . .
-            . . f f f f f 2 2 f f f f f . .
-            . . f f e 2 e 2 2 e 2 e f f . .
-            . . f e 2 f 2 f f 2 f 2 e f . .
-            . . f f f 2 2 e e 2 2 f f f . .
-            . f f e f 2 f e e f 2 f e f f .
-            . f e e f f e e e e f e e e f .
-            . . f e e e e e e e e e e f . .
-            . . . f e e e e e e e e f . . .
-            . . e 4 f f f f f f f f 4 e . .
-            . . 4 d f 2 2 2 2 2 2 f d 4 . .
-            . . 4 4 f 4 4 4 4 4 4 f 4 4 . .
+            . . . . . . . 5 5 . . . . . . .
+            . . . . . f 5 5 5 5 f . . . . .
+            . . . . f 6 6 6 6 6 6 f . . . .
+            . . . f 6 1 1 1 6 1 6 6 f . . .
+            . . . f 6 6 6 6 6 6 6 6 f . . .
+            . . . f 6 6 6 6 6 6 6 6 f . . .
+            . . . f 6 6 6 6 6 6 6 6 f . . .
+            . . f f 6 6 6 6 6 6 6 6 f f . .
+            . f 6 6 6 f 6 6 6 6 f 6 6 6 f .
+            . . f f f 3 f f f f 3 f f f . .
+            . . . f d 5 3 3 3 3 5 d f . . .
+            . . f d d f 3 3 3 3 f d d f . .
+            . . . f f f 5 3 3 5 f f f . . .
+            . . . . f 3 3 5 5 3 3 f . . . .
+            . . . . f 3 3 3 3 3 3 f . . . .
             . . . . . f f f f f f . . . . .
-            . . . . . f f . . f f . . . . .
         `, MATH_QUIZ_SPRITE_KIND)
         challengerSprite.y += 72
         challengerSprite.vy = -8
@@ -618,7 +613,6 @@ namespace hocCubicbird {
                     oneline:false
                 })
                 _result.level1Correct += 1
-                info.changeScoreBy(10)
                 judgeSprite.say("回答正确")
             }  else {
                 _result.problemLines.push({
@@ -645,21 +639,23 @@ namespace hocCubicbird {
             . . 1 4 4 4 4 4 4 4 4 4 1 . . .
             . 1 5 4 4 4 4 4 4 4 4 4 1 . . .
             1 5 5 4 4 f f 4 4 1 1 1 1 1 1 1
-            5 5 5 4 4 f f 4 4 5 5 5 5 5 5 .
-            . . . 4 4 4 4 4 4 5 5 5 5 5 . .
-            . . . 4 4 4 4 4 4 5 5 5 5 . . .
-            . . . 4 4 4 4 4 4 5 5 5 1 . . .
-            . . . 4 4 4 4 4 4 5 5 4 1 . . .
-            . . . 4 4 4 4 4 4 5 4 4 1 . . .
+            5 5 5 4 4 f f 4 4 9 9 9 9 9 9 .
+            . . . 4 4 4 4 4 4 9 9 9 9 9 . .
+            . . . 4 4 4 4 4 4 9 9 9 9 . . .
+            . . . 4 4 4 4 4 4 9 9 9 1 . . .
+            . . . 4 4 4 4 4 4 9 9 4 1 . . .
+            . . . 4 4 4 4 4 4 9 4 4 1 . . .
             . . . 9 9 9 7 7 7 7 7 7 1 . . .
             . . . . 9 9 7 7 7 7 7 7 1 . . .
-            . . . . . 9 7 7 7 7 7 7 1 . . .
+            . . . . . 9 7 7 7 7 7 7 . . . .
             . . . . . . . . . . . . . . . .
         `)
         summary.textUp(_result.problemLines)
     }
 
     control.runInParallel(function() {
+        tiles.setTilemap(tilemap`level`)//设置场景
+
         if (_level === Level.第一关) {
             mathQuiz()
 
