@@ -29,16 +29,25 @@
         "mimeType": "image/x-mkcd-f4",
         "tilemapTile": true
     },
+    "tile6": {
+        "data": "hwQQABAAAAB3d3d3d3d3d3d3/////393d/ceERER/nd39+Hu7u7xd3f34e7u7vF3d/fh7u7u8Xd39+Hu7u7xd3f34e7u7vF3d/ceERER/nd39+7u4e7+d3f3HhEREfF3d/fh7uHu/nd39+Hu4e7+d3f3HhEREfF3d/fh7uHu/nd39+Hu4e7+dw==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile7": {
+        "data": "hwQQABAAAAB39+7u7u7+d3f37uEREfF3d/fu7uHu/nd39+7u7u7+d3f37u4REfF3d/fu7uHu8Xd39+7u4e7xd3f37u7u7v53d/fu7hER8Xd39+7u4eHxd3f37u7h4fF3d/fu7hHh8Xd39+7u7u7+d3d3/////393d3d3d3d3d3d3d3d3d3d3dw==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
     "level": {
         "id": "level",
         "mimeType": "application/mkcd-tilemap",
-        "data": "MTAxYzAwMDgwMDAxMDEwMTAxMDEwMTAxMDEwMTAxMGQwZDBkMGQwZDBkMGQwZDA1MDcwNzA3MDcwNzA3MDcwNzA2MDEwMTAxMDEwMTAxMDEwMTAxMDEwZDBkMGQwZDBkMGQwZDBkMDgwYTBhMGEwYTBhMGEwYTBhMDkwMTAxMDEwMTAxMDEwMTAxMDEwMTBkMGQwZDBkMGQwZDBkMGQwODBhMGEwYTBhMGEwYTBhMGEwOTAxMDEwMjAyMDIwMjAyMDIwMTAxMGQwZDBkMGQwZDBkMGQwZDA4MGEwYTAyMDIwMjAyMGEwYTA5MDEwMTAzMDMwMzAzMDMwMzAxMDEwYjBiMGIwYjBiMGIwYjBiMDgwYTBhMGEwYTBhMGEwYTBhMDkwMTAxMDEwMTAzMDMwMTAxMDEwMTBjMGMwYzBjMGMwYzBjMGMwODBhMGEwZTBhMGEwYTBhMGEwOTAxMDEwMTAxMDMwMzAxMDEwMTAxMGQwZDBkMGQwZDBkMGQwZDA4MGEwYTBhMGEwYTBhMGEwYTA5MDEwMTAxMDEwMzAzMDEwMTAxMDEwZDBkMGQwZDBkMGQwZDBkMDgwYTBhMGEwYTBhMGEwYTBhMDkwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMA==",
+        "data": "MTAxYzAwMDgwMDAxMDEwMTAxMDEwMTAxMDEwMTAxMGQwZDBkMGQwZDBkMGQwZDA0MDYwNjA2MDYwNjA2MDYwNjA1MDEwMTAxMDEwMTAxMDEwMTAxMDEwZDEyMGUwZjEwMGYxMzBkMDcwOTA5MDkwOTA5MDkwOTA5MDgwMTAxMDEwMTAxMDEwMTAxMDEwMTBkMGYxNDE1MGUxMzEwMGQwNzA5MDkwOTA5MDkwOTA5MDkwODAxMDEwMjAyMDIwMjAyMDIwMTAxMGQwZTBmMGUxMDBmMGUwZDA3MDkwOTAyMDIwMjAyMDkwOTA4MDEwMTAzMDMwMzAzMDMwMzAxMDEwYTBhMGEwYTBhMGEwYTBhMDcwOTA5MDkwOTA5MDkwOTA5MDgwMTAxMDEwMTAzMDMwMTAxMDEwMTBiMGIwYjBiMGIwYjBiMGIwNzA5MDkwYzA5MDkwOTA5MDkwODAxMDEwMTAxMDMwMzAxMDEwMTAxMGQwZTBlMTIwZTExMGUwZDA3MDkwOTA5MDkwOTA5MDkwOTA4MDEwMTAxMDEwMzAzMDEwMTAxMDEwZDBkMGQwZDBkMGQwZDBkMDcwOTA5MDkwOTA5MDkwOTA5MDgwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMA==",
         "tileset": [
             "myTiles.transparency16",
             "sprites.dungeon.floorLight2",
             "sprites.dungeon.stairLadder",
             "sprites.dungeon.floorDark2",
-            "myTiles.tile1",
             "sprites.dungeon.darkGroundNorthWest0",
             "sprites.dungeon.darkGroundNorthEast0",
             "sprites.dungeon.darkGroundNorth",
@@ -47,8 +56,16 @@
             "sprites.dungeon.darkGroundCenter",
             "sprites.vehicle.roadIntersection3",
             "sprites.vehicle.roadIntersection1",
-            "myTiles.tile4",
-            "myTiles.tile5"
+            "myTiles.tile5",
+            "sprites.builtin.brick",
+            "sprites.castle.tileGrass2",
+            "sprites.castle.tileGrass1",
+            "sprites.castle.tileGrass3",
+            "sprites.castle.saplingOak",
+            "sprites.castle.saplingPine",
+            "sprites.castle.shrub",
+            "myTiles.tile6",
+            "myTiles.tile7"
         ]
     },
     "level_0": {

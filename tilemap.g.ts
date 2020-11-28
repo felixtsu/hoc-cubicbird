@@ -12,10 +12,14 @@ namespace myTiles {
     export const tile4 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
     export const tile5 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile6 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile7 = image.ofBuffer(hex``);
 
     helpers.registerTilemapFactory(function(name: string) {
         switch(helpers.stringTrim(name)) {
-            case "level": return tiles.createTilemap(hex`1c000800010101010101010101010d0d0d0d0d0d0d0d05070707070707070706010101010101010101010d0d0d0d0d0d0d0d080a0a0a0a0a0a0a0a09010101010101010101010d0d0d0d0d0d0d0d080a0a0a0a0a0a0a0a09010102020202020201010d0d0d0d0d0d0d0d080a0a020202020a0a09010103030303030301010b0b0b0b0b0b0b0b080a0a0a0a0a0a0a0a09010101010303010101010c0c0c0c0c0c0c0c080a0a0e0a0a0a0a0a09010101010303010101010d0d0d0d0d0d0d0d080a0a0a0a0a0a0a0a09010101010303010101010d0d0d0d0d0d0d0d080a0a0a0a0a0a0a0a09`, img`
+            case "level": return tiles.createTilemap(hex`1c000800010101010101010101010d0d0d0d0d0d0d0d04060606060606060605010101010101010101010d120e0f100f130d07090909090909090908010101010101010101010d0f14150e13100d07090909090909090908010102020202020201010d0e0f0e100f0e0d07090902020202090908010103030303030301010a0a0a0a0a0a0a0a07090909090909090908010101010303010101010b0b0b0b0b0b0b0b0709090c090909090908010101010303010101010d0e0e120e110e0d07090909090909090908010101010303010101010d0d0d0d0d0d0d0d07090909090909090908`, img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -24,7 +28,7 @@ namespace myTiles {
 . . . . 2 2 . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-`, [myTiles.transparency16,sprites.dungeon.floorLight2,sprites.dungeon.stairLadder,sprites.dungeon.floorDark2,myTiles.tile1,sprites.dungeon.darkGroundNorthWest0,sprites.dungeon.darkGroundNorthEast0,sprites.dungeon.darkGroundNorth,sprites.dungeon.darkGroundWest,sprites.dungeon.darkGroundEast,sprites.dungeon.darkGroundCenter,sprites.vehicle.roadIntersection3,sprites.vehicle.roadIntersection1,myTiles.tile4,myTiles.tile5], TileScale.Sixteen)
+`, [myTiles.transparency16,sprites.dungeon.floorLight2,sprites.dungeon.stairLadder,sprites.dungeon.floorDark2,sprites.dungeon.darkGroundNorthWest0,sprites.dungeon.darkGroundNorthEast0,sprites.dungeon.darkGroundNorth,sprites.dungeon.darkGroundWest,sprites.dungeon.darkGroundEast,sprites.dungeon.darkGroundCenter,sprites.vehicle.roadIntersection3,sprites.vehicle.roadIntersection1,myTiles.tile5,sprites.builtin.brick,sprites.castle.tileGrass2,sprites.castle.tileGrass1,sprites.castle.tileGrass3,sprites.castle.saplingOak,sprites.castle.saplingPine,sprites.castle.shrub,myTiles.tile6,myTiles.tile7], TileScale.Sixteen)
             case "level_0": return tiles.createTilemap(hex`1000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000`, img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
