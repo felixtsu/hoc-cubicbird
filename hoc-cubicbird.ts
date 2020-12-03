@@ -1,5 +1,5 @@
-// % weight=100 color=#6699CC icon="\u2593"
-// block="编程一小时" % groups='["做数学题", "统计成绩"]'
+//%block="学渣大冒险" %groups='["做数学题", "统计成绩", "游戏控制"]'
+//%weight=100 color=#6699CC icon="\u2593"
 namespace hocCubicbird {
 
     export enum Level {
@@ -32,29 +32,33 @@ namespace hocCubicbird {
 
     //% blockId=div_operator
     //% block="除号"
+    //% group="做数学题"
     export function DIV():Operator{
         return Operator.DIV
     }
 
     //% blockId=mul_operator
     //% block="乘号"
+    //% group="做数学题"    
     export function MUL():Operator{
         return Operator.MUL
     }
 
     //% blockId=sub_operator
     //% block="减号"
+    //% group="做数学题"
     export function SUB():Operator{
         return Operator.SUB
     }
 
     //% blockId=add_operator
     //% block="加号"
+    //% group="做数学题"
     export function ADD():Operator{
         return Operator.ADD
     }
 
-    const PROBLEM_SIZE = 10 //测试修改：第一关题目减少
+    const PROBLEM_SIZE = 10 
     const RESULT_SIZE = 50
     let _level = Level.第一关
     let _currentAnswer = NaN;
@@ -87,27 +91,11 @@ namespace hocCubicbird {
         level2hsCountCorrect:false
     }
 
-
-    //% blockId=start_test
-    //% block="我是 %name 开始 %level"
-    //% group="做数学题"
-    export function startGame(name:string, level:Level) {
-        challengerName = name
-        _level = level
-    }
-
     //% blockId=give_answer
     //% block="提交答案 %answer"
     //% group="做数学题"
     export function giveAnswer(answer:number) {
         _currentAnswer = answer
-    }
-
-    //% blockId=set_speed
-    //% block="设定游戏速度 %speed"
-    //% group="做数学题"
-    export function setGameSpeed(speed:GameSpeed) {
-        _currentSpeed = speed
     }
 
     function pauseImpl(millis : number) {
@@ -919,8 +907,22 @@ namespace hocCubicbird {
         clearScoreStatScene()
 
         summaryScene()
-
         
     })
+
+    //% blockId=start_test
+    //% block="我是 %name 以 %speed 开始挑战"
+    //% group="游戏控制"
+    export function startGame(name:string, speed:GameSpeed) {
+        challengerName = name
+        _currentSpeed = speed
+    }
+
+    //% blockId=set_level
+    //% block="开始 %level"
+    //% group="游戏控制"
+    export function setLevel(level:Level) {
+        _level = level
+    }
 
 }
