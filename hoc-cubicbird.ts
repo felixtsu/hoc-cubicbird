@@ -614,7 +614,7 @@ namespace hocCubicbird {
             pauseImpl(1000)
         }
 
-        judgeSprite.say("测验结束，总得分" + info.score())
+        judgeSprite.say("测验结束，总得分" + 10 * _result.level1Correct)
 
         pauseImpl(3000)
     }
